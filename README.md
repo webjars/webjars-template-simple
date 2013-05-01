@@ -1,5 +1,5 @@
-WebJar for datatables-bootstrap
+WebJar for WEBJAR_NAME
 
 More info: http://webjars.org
 
-Upstream: http://www.datatables.net/blog/Twitter_Bootstrap_2
+Upstream: WEBJAR_URL
