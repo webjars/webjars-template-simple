@@ -16,6 +16,23 @@
     <description>WebJar for WEBJAR_NAME</description>
     <url>http://webjars.org</url>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <upstream.version>UPSTREAM_VERSION</upstream.version>
+        <upstream.url>UPSTREAM_URL</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "WEBJAR_ID": "WEBJAR_ID"
+                },
+                "shim": {
+                    "WEBJAR_ID": ["DEP_ID"]
+                }
+            }
+        </requirejs>
+    </properties>
+
     <developers>
         <developer>
             <id>YOUR_ID</id>
@@ -46,13 +63,6 @@
             <version>ANOTHER_WEBJAR_VERSION</version>
         </dependency>
     </dependencies>
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>UPSTREAM_VERSION</upstream.version>
-        <upstream.url>UPSTREAM_URL</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
-    </properties>
     
     <build>
         <plugins>
@@ -106,12 +116,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <targetPath>${destDir}</targetPath>
-            </resource>
-        </resources>
     </build>
 
 </project>
