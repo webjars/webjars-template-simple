@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <groupId>org.webjars</groupId>
+        <artifactId>webjars-parent-maven</artifactId>
+        <version>1</version>
     </parent>
 
     <packaging>jar</packaging>
-    <groupId>org.webjars</groupId>
     <artifactId>WEBJAR_ID</artifactId>
     <version>UPSTREAM_VERSION-SNAPSHOT</version>
     <name>WEBJAR_NAME</name>
@@ -17,7 +17,6 @@
     <url>http://webjars.org</url>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>UPSTREAM_VERSION</upstream.version>
         <upstream.url>UPSTREAM_URL</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
@@ -55,7 +54,7 @@
         <developerConnection>scm:git:https://github.com/webjars/WEBJAR_ID.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -63,13 +62,12 @@
             <version>ANOTHER_WEBJAR_VERSION</version>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0-beta-5</version>
                 <executions>
                     <execution>
                         <id>download-full-js</id>
@@ -96,24 +94,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.5.1</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>sonatype-nexus-staging</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
             </plugin>
         </plugins>
     </build>

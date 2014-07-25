@@ -1,4 +1,4 @@
-WebJar for WEBJAR_NAME
+## WebJar for WEBJAR_NAME
 
 More info: http://webjars.org
 
