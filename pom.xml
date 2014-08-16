@@ -67,32 +67,18 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0-beta-5</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
                 <executions>
                     <execution>
-                        <id>download-full-js</id>
                         <phase>process-resources</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
+                        <goals><goal>run</goal></goals>
                         <configuration>
-                            <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.js</fromFile>
-                            <toDir>${destDir}</toDir>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-min-js</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.min.js</fromFile>
-                            <toDir>${destDir}</toDir>
+                            <target>
+                                <mkdir dir="${destDir}" />
+                                <get src="${upstream.url}/FILE.js" dest="${destDir}" />
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
