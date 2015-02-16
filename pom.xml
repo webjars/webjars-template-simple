@@ -24,7 +24,7 @@
         <requirejs>
             {
                 "paths": {
-                    "WEBJAR_ID": "WEBJAR_ID"
+                    "WEBJAR_ID": "MAIN_JS"
                 },
                 "shim": {
                     "WEBJAR_ID": ["DEP_ID"]
@@ -44,7 +44,7 @@
     <licenses>
         <license>
             <name>UPSTREAM_LICENSE_NAME</name>
-            <url>UPSTREAM_LICENSE_VERSION</url>
+            <url>UPSTREAM_LICENSE_URL</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -59,8 +59,8 @@
     <dependencies>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>ANOTHER_WEBJAR_ID</artifactId>
-            <version>ANOTHER_WEBJAR_VERSION</version>
+            <artifactId>ANOTHER_WEBJAR_ARTIFACT_ID</artifactId>
+            <version>ANOTHER_WEBJAR_ARTIFACT_VERSION</version>
         </dependency>
     </dependencies>
     
@@ -77,7 +77,7 @@
                         <configuration>
                             <target>
                                 <mkdir dir="${destDir}" />
-                                <get src="${upstream.url}/FILE.js" dest="${destDir}" />
+                                <get src="${upstream.url}/MAIN_JS.js" dest="${destDir}" />
                             </target>
                         </configuration>
                     </execution>
