@@ -76,8 +76,8 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <mkdir dir="${destDir}" />
-                                <get src="${upstream.url}/MAIN_JS.js" dest="${destDir}" />
+                                <mkdir dir="${destDir}"/>
+                                <get src="${upstream.url}/MAIN_JS.js" dest="${destDir}"/>
                             </target>
                         </configuration>
                     </execution>
